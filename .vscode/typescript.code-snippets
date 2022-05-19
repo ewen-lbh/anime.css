@@ -1,0 +1,16 @@
+{
+  "test function": {
+    "prefix": "testfunc",
+    "body": [
+      "",
+      "if (import.meta.vitest) {",
+      "\tconst { it, expect, describe } = import.meta.vitest",
+      "\tdescribe(\"$1\", () => {",
+      "\t\tit(\"$2\", () => {",
+      "\t\t\t$0",
+      "\t\t})",
+      "\t})",
+      "}"
+    ]
+  }
+}

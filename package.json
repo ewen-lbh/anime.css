@@ -1,0 +1,43 @@
+{
+  "name": "anime.css",
+  "version": "0.1.0",
+  "description": "Generate CSS-only animations from anime.js animations",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewen-lbh/anime.css.git"
+  },
+  "keywords": [
+    "anime.js",
+    "animation",
+    "css",
+    "generator",
+    "static"
+  ],
+  "author": "Ewen Le Bihan <hey@ewen.works>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ewen-lbh/anime.css/issues"
+  },
+  "homepage": "https://github.com/ewen-lbh/anime.css#readme",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/animejs": "^3.1.4",
+    "@types/css": "^0.0.33",
+    "@types/cssbeautify": "^0.3.2",
+    "@types/md5": "^2.3.2",
+    "animejs": "^3.2.1",
+    "livescript": "^1.6.0",
+    "rollup": "^2.74.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.6.4",
+    "vitest": "^0.12.6"
+  },
+  "dependencies": {
+    "cssbeautify": "^0.3.1",
+    "slugify": "^1.6.5"
+  }
+}
