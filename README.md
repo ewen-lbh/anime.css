@@ -48,7 +48,7 @@ _If you found a way to generate CSS that implements any of these, please open an
 
 ## Installation
 
-    npm install Nîmes
+    npm install nimes
 
 ## Usage
 
