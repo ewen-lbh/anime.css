@@ -21,20 +21,20 @@ type CSSTree =
   | undefined
   | null
 
-type AnimeCSSInstance = AnimeParams & {
+type NimesInstance = AnimeParams & {
   intoCSS: () => string
-  timeline: AnimeCSSTimeline
+  timeline: NimesTimeline
   name: string
 }
 
-type AnimeCSSTimeline = AnimeParams & {
-  resolvedKeyframes: AnimeCSSKeyframe[]
+type NimesTimeline = AnimeParams & {
+  resolvedKeyframes: NimesKeyframe[]
   name: string
   add: (params: AnimeAnimParams, timelineOffset?: string | number) => void
   intoCSS: () => string
 }
 
-type AnimeCSSKeyframe = {
+type NimesKeyframe = {
   start: number
   end: number
   targets: AnimeAnimParams["targets"]
@@ -116,7 +116,7 @@ if (import.meta.vitest) {
   })
 }
 
-function aggregateSelectors(tl: AnimeCSSTimeline): string[] {
+function aggregateSelectors(tl: NimesTimeline): string[] {
   let selectors = new Set<string>()
   for (const keyframe of tl.resolvedKeyframes) {
     if (Array.isArray(keyframe.targets)) {
@@ -148,7 +148,7 @@ if (import.meta.vitest) {
   })
 }
 function resolveTimelineOffset(
-  tl: AnimeCSSTimeline,
+  tl: NimesTimeline,
   to: string | number | undefined | null
 ): number {
   const from =
@@ -314,14 +314,14 @@ if (import.meta.vitest) {
   })
 }
 
-function animationName(tl: AnimeCSSTimeline, selector: string) {
+function animationName(tl: NimesTimeline, selector: string) {
   return `${tl.name}-${slugify(selector).replace(/\./g, "")}`
 }
 
 function keyframesOf(
-  tl: AnimeCSSTimeline,
+  tl: NimesTimeline,
   selector: string
-): AnimeCSSKeyframe[] {
+): NimesKeyframe[] {
   return tl.resolvedKeyframes.filter(
     keyframe =>
       keyframe.targets === selector ||
@@ -361,7 +361,7 @@ if (import.meta.vitest) {
   })
 }
 
-function totalDuration(tl: AnimeCSSTimeline): number {
+function totalDuration(tl: NimesTimeline): number {
   if (tl.resolvedKeyframes.length === 0) {
     return 0
   }
@@ -379,17 +379,17 @@ function cssTimingFunctionOf(easing: AnimeAnimParams["easing"]): string {
   return func.replace(/^cubicBezier/, "cubic-bezier")
 }
 
-function initialDelay(tl: AnimeCSSTimeline, selector?: string): number {
+function initialDelay(tl: NimesTimeline, selector?: string): number {
   const keyframes = selector !== undefined ? keyframesOf(tl, selector) : tl.resolvedKeyframes
   return keyframes.length === 0 ? 0 : keyframes[0].start
 }
 
-function timeline(name: string, params: AnimeParams): AnimeCSSTimeline {
+function timeline(name: string, params: AnimeParams): NimesTimeline {
   let tl = {
     ...params,
     name,
     resolvedKeyframes: [],
-  } as AnimeCSSTimeline
+  } as NimesTimeline
 
   tl.add = (params: AnimeAnimParams, timelineOffset?: string | number) => {
     let start = resolveTimelineOffset(tl, timelineOffset)
@@ -460,8 +460,8 @@ function timeline(name: string, params: AnimeParams): AnimeCSSTimeline {
   return tl
 }
 
-function anime(name: string, params: AnimeParams): AnimeCSSInstance {
-  let instance = params as AnimeCSSInstance
+function anime(name: string, params: AnimeParams): NimesInstance {
+  let instance = params as NimesInstance
   // instance.intoCSS = () => {} // TODO
   instance.timeline = timeline(name, params)
 

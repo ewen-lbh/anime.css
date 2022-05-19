@@ -1,8 +1,8 @@
-# anime.css
+# Nîmes
 
 > Ship [anime.js](https://animejs.com) animations with 0 bytes of Javascript
 
-_anime.css_ is a command-line tool to turn [anime.js](https://animejs.com) animations from a javascript file into a CSS file, containing the appropriate ruleset to implement the same animation without any trace of javascript.
+_Nîmes_ is a command-line tool to turn [anime.js](https://animejs.com) animations from a javascript file into a CSS file, containing the appropriate ruleset to implement the same animation without any trace of javascript.
 
 [Features](#features) · [Installation](#installation) · [Usage](#usage) · [Examples](./examples/) · [Real-world usage](#real-world-usage)
 
@@ -48,7 +48,7 @@ _If you found a way to generate CSS that implements any of these, please open an
 
 ## Installation
 
-    npm install anime.css
+    npm install Nîmes
 
 ## Usage
 
@@ -57,7 +57,7 @@ _If you found a way to generate CSS that implements any of these, please open an
 1. Append the following line at the start of your anime.js script:
 
     ```js
-    const {anime} = require("anime.css").default;
+    const {anime} = require("nimes").default;
     ```
 
 2. Add a call to `.intoCSS` (the method takes no parameters) on the `anime.timeline` object you want to convert. 

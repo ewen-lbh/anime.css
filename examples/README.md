@@ -6,7 +6,7 @@ A spinner I made of my personal logo for my [portfolio](https://ewen.works).
 
 ![](./logo-spinner.gif "The result")
 
-_Note: the abrupt ending is not an anime.css bug, it's just me stopping the recording mid-animation_
+_Note: the abrupt ending is not an Nîmes bug, it's just me stopping the recording mid-animation_
 
 
 Files:
