@@ -1,6 +1,6 @@
 {
   "name": "nimes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate CSS-only animations from anime.js animations",
   "main": "index.js",
   "scripts": {
